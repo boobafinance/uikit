@@ -2,9 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 const ResetCSS = createGlobalStyle`
 * {
-  @import url('https://fonts.googleapis.com/css2?family=Reggae+One&amp;display=swap');
-  font-family: 'Reggae One';
-}
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital@1&display=swap');
+  font-family: 'Lato', sans-serif;;
+  }
   /* prettier-ignore */
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -68,7 +68,7 @@ const ResetCSS = createGlobalStyle`
     box-sizing: border-box;
   }
   * {
-    font-family: 'Montserrat';
+    font-family: 'Lato';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
