@@ -1,0 +1,33 @@
+import styled from "styled-components";
+import Text from "../Text/Text";
+import { tags, sizes, HeadingProps } from "./types";
+
+const style = {
+  [sizes.MD]: {
+    fontSize: "20px",
+  },
+  [sizes.LG]: {
+    fontSize: "24px",
+  },
+  [sizes.XL]: {
+    fontSize: "40px",
+  },
+  [sizes.XXL]: {
+    fontSize: "64px",
+  },
+};
+
+const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
+  ${({ size }) => style[size || sizes.MD]}
+  font-family: 'Reggae One';
+  color: #fff;
+  text-shadow: 0px 0px 15px rgb(185 13 13 / 50%), 0px 0px 3px rgb(238 238 238 / 25%), 0px 0px 6px #ed3e3e;
+  font-weight:600;
+  line-height: 1.1;
+`;
+
+Heading.defaultProps = {
+  as: tags.H2,
+};
+
+export default Heading;
