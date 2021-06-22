@@ -52,10 +52,9 @@ const StyledButton = styled.button<ButtonProps>`
   border-radius: 16px;
   box-shadow: ${getButtonVariantProp("boxShadow")};
   color: #fff;
-  text-shadow: 0px 0px 15px rgb(185 13 13 / 50%), 0px 0px 3px rgb(238 238 238 / 25%), 0px 0px 6px #ed3e3e;
   cursor: pointer;
   display: inline-flex;
-  font-family: 'Reggae One';
+  font-family: 'Lato';
   font-size: 16px;
   font-weight: 600;
   /* max-content instead of auto for Safari fix */

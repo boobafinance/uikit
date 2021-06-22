@@ -46,13 +46,13 @@ const Input = styled.input<InputProps>`
   width: 100%;
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.textSubtle};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   &:disabled {
     background-color: ${({ theme }) => theme.colors.backgroundDisabled};
     box-shadow: none;
-    color: ${({ theme }) => theme.colors.textDisabled};
+    color: ${({ theme }) => theme.colors.text};
     cursor: not-allowed;
   }
 
