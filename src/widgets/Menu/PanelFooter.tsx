@@ -54,6 +54,23 @@ const SocialEntry = styled.div`
   padding: 0 16px;
 `;
 
+let BobaValue = "0.00";
+let liveValue = "0.00";
+fetch("https://api.pancakeswap.info/api/v2/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3")
+  .then((res) => res.json())
+  .then(
+    (result) => {
+      const bobaValues = parseFloat((result.data.price * 1000000000).toFixed(2)).toString();
+      BobaValue = bobaValues;
+    },
+    (error) => {
+      BobaValue = "0.00";
+    }
+  )
+  .catch(() => {
+    BobaValue = "0.00";
+  });
+
 const PanelFooter: React.FC<Props> = ({
   isPushed,
   pushNav,
@@ -78,14 +95,16 @@ const PanelFooter: React.FC<Props> = ({
   return (
     <Container>
       <SocialEntry>
-        {/* {cakePriceUsd ? (
+        {BobaValue ? (
           <PriceLink href={priceLink} target="_blank">
             <PancakeRoundIcon width="24px" mr="8px" />
-            <Text color="textSubtle" bold>{`$${cakePriceUsd.toFixed(3)}`}</Text>
+            <Text color="textSubtle" bold>
+              1B = {`$${BobaValue}`}
+            </Text>
           </PriceLink>
         ) : (
           <Skeleton width={80} height={24} />
-        )} */}
+        )}
         <Flex>
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];

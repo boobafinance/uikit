@@ -1,6 +1,6 @@
 {
   "name": "@pancakeswap-libs/uikit",
-  "version": "0.10.4",
+  "version": "0.10.5",
   "description": "Set of UI components for pancake projects",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
@@ -11,7 +11,9 @@
   "repository": "https://github.com/boobafinance/uikit",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist",
+    "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist && cp",
+    "buildjeff": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist && cp -R ./dist ../farm-app/node_modules/@pancakeswap-libs/uikit",
+
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "storybook": "start-storybook -p 6006",

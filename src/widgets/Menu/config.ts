@@ -119,22 +119,22 @@ export const socials = [
     icon: "TelegramIcon",
     items: [
       {
-        label: "English",
-        href: "https://t.me/goosedefi",
+        label: "English Word",
+        href: "https://t.me/boobamfinance",
       },
       // {
       //   label: "Bahasa Indonesia",
       //   href: "https://t.me/PancakeSwapIndonesia",
       // },
-      {
+      /* {
         label: "中文",
         href: "https://t.me/goosefinancechinese",
-      },
+      }, */
       // {
       //   label: "Tiếng Việt",
       //   href: "https://t.me/PancakeSwapVN",
       // },
-      {
+      /* {
         label: "Italiano",
         href: "https://t.me/goosefinanceitalian",
       },
@@ -145,12 +145,12 @@ export const socials = [
       {
         label: "Türkiye",
         href: "https://t.me/GooseFinanceTurkey",
-      },
-      // {
-      //   label: "Português",
-      //   href: "https://t.me/PancakeSwapPortuguese",
-      // },
+      }, */
       {
+        label: "Português",
+        href: "https://t.me/boobamfinancebrcomunidade",
+      },
+      /*  {
         label: "Español",
         href: "https://t.me/goosefinancespanish",
       },
@@ -165,23 +165,23 @@ export const socials = [
       {
         label: "Announcements",
         href: "https://t.me/goosefinanceann",
-      },
+      }, */
       {
         label: "Price Bot",
-        href: "https://t.me/BinanceRocketEGG",
+        href: "https://t.me/boobambotprice",
       },
     ],
   },
   {
     label: "Twitter",
     icon: "TwitterIcon",
-    href: "https://twitter.com/goosedefi",
+    href: "https://twitter.com/boobamtoken",
   },
-  {
+  /* {
     label: "Reddit",
     icon: "RedditIcon",
     href: "https://www.reddit.com/r/GooseFinanceofficial",
-  },
+  }, */
 ];
 
 export const MENU_HEIGHT = 64;

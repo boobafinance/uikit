@@ -17,7 +17,7 @@ const modalHelper = (modal: React.ReactNode, closeOnOverlayClick = true): [Handl
   }, [closeOnOverlayClick, setCloseOnOverlayClick]);
 
   return [onPresentCallback, onDismiss];
-}
+};
 
 export const ModalWrapper = (modal: React.ReactNode, closeOnOverlayClick = true): [Handler, Handler] => {
   return modalHelper(modal, closeOnOverlayClick);

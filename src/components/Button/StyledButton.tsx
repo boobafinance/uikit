@@ -49,12 +49,12 @@ const StyledButton = styled.button<ButtonProps>`
   align-items: center;
   background-color: ${getButtonVariantProp("background")};
   border: ${getButtonVariantProp("border")};
-  border-radius: 16px;
+  border-radius: 10px;
   box-shadow: ${getButtonVariantProp("boxShadow")};
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: 'Lato';
+  font-family: "Lato";
   font-size: 16px;
   font-weight: 600;
   /* max-content instead of auto for Safari fix */

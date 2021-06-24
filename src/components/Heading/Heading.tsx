@@ -20,8 +20,8 @@ const style = {
 const Heading = styled(Text).attrs({ bold: true })<HeadingProps>`
   ${({ size }) => style[size || sizes.MD]}
   font-family: 'Lato';
-  color: #B28E59;
-  font-weight:600;
+  color: #b28e59;
+  font-weight: 600;
   line-height: 1.1;
 `;
 
