@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { PancakeRoundIcon, CogIcon, SvgProps } from "../../components/Svg";
+import { PancakeRoundIcon, CogIcon, SvgProps, LogoLive } from "../../components/Svg";
 import Text from "../../components/Text/Text";
 import Flex from "../../components/Flex/Flex";
 import Dropdown from "../../components/Dropdown/Dropdown";
@@ -55,12 +55,13 @@ const SocialEntry = styled.div`
 `;
 
 let BobaValue = "0.00";
-let liveValue = "0.00";
-fetch("https://api.pancakeswap.info/api/v2/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3")
+let LiveValue = "3.00";
+
+fetch("https://api.dex.guru/v1/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3")
   .then((res) => res.json())
   .then(
     (result) => {
-      const bobaValues = parseFloat((result.data.price * 1000000000).toFixed(2)).toString();
+      const bobaValues = (result.priceUSD * 1000000000).toFixed(2).toString();
       BobaValue = bobaValues;
     },
     (error) => {
@@ -68,7 +69,22 @@ fetch("https://api.pancakeswap.info/api/v2/tokens/0x5481a517028813956005d77bcd0f
     }
   )
   .catch(() => {
-    BobaValue = "0.00";
+    BobaValue = "3.00";
+  });
+
+fetch("https://api.dex.guru/v1/tokens/x")
+  .then((res) => res.json())
+  .then(
+    (result) => {
+      const liveValue = result.priceUSD.toFixed(2).toString();
+      LiveValue = liveValue;
+    },
+    (error) => {
+      LiveValue = "3.00";
+    }
+  )
+  .catch(() => {
+    LiveValue = "3.00";
   });
 
 const PanelFooter: React.FC<Props> = ({
@@ -99,12 +115,58 @@ const PanelFooter: React.FC<Props> = ({
           <PriceLink href={priceLink} target="_blank">
             <PancakeRoundIcon width="24px" mr="8px" />
             <Text color="textSubtle" bold>
-              1B = {`$${BobaValue}`}
+              1B/{`$${BobaValue}`}
             </Text>
           </PriceLink>
         ) : (
           <Skeleton width={80} height={24} />
         )}
+
+        {LiveValue ? (
+          <PriceLink href={priceLink} target="_blank">
+            <LogoLive width="24px" mr="8px" />
+            <Text color="textSubtle" bold>
+              {`$${LiveValue}`}
+            </Text>
+          </PriceLink>
+        ) : (
+          <Skeleton width={80} height={24} />
+        )}
+      </SocialEntry>
+
+      <SettingsEntry>
+        <Button variant="text" onClick={() => toggleTheme(!isDark)}>
+          {/* alignItems center is a Safari fix */}
+          <Flex alignItems="center">
+            <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
+            <Text color="textDisabled" mx="4px">
+              /
+            </Text>
+            <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
+          </Flex>
+        </Button>
+
+        {/*  <Dropdown
+          position="top-right"
+          target={
+            <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
+              <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
+            </Button>
+          }
+        >
+          {langs.map((lang) => (
+            <MenuButton
+              key={lang.code}
+              fullWidth
+              onClick={() => setLang(lang)}
+              // Safari fix
+              style={{ minHeight: "32px", height: "auto" }}
+            >
+              {lang.language}
+            </MenuButton>
+          ))}
+        </Dropdown> */}
+
         <Flex>
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];
@@ -128,38 +190,6 @@ const PanelFooter: React.FC<Props> = ({
             );
           })}
         </Flex>
-      </SocialEntry>
-      <SettingsEntry>
-        <Button variant="text" onClick={() => toggleTheme(!isDark)}>
-          {/* alignItems center is a Safari fix */}
-          <Flex alignItems="center">
-            <SunIcon color={isDark ? "textDisabled" : "text"} width="24px" />
-            <Text color="textDisabled" mx="4px">
-              /
-            </Text>
-            <MoonIcon color={isDark ? "text" : "textDisabled"} width="24px" />
-          </Flex>
-        </Button>
-        <Dropdown
-          position="top-right"
-          target={
-            <Button variant="text" startIcon={<LanguageIcon color="textSubtle" width="24px" />}>
-              <Text color="textSubtle">{currentLang?.toUpperCase()}</Text>
-            </Button>
-          }
-        >
-          {langs.map((lang) => (
-            <MenuButton
-              key={lang.code}
-              fullWidth
-              onClick={() => setLang(lang)}
-              // Safari fix
-              style={{ minHeight: "32px", height: "auto" }}
-            >
-              {lang.language}
-            </MenuButton>
-          ))}
-        </Dropdown>
       </SettingsEntry>
     </Container>
   );
