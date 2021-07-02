@@ -1558,8 +1558,8 @@ var shadows = {
     level1: "0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05)",
     active: "0px 0px 0px 1px #0098A1, 0px 0px 4px 8px rgba(31, 199, 212, 0.4)",
     success: "0px 0px 0px 1px #31D0AA, 0px 0px 0px 4px rgba(49, 208, 170, 0.2)",
-    warning: "0px 0px 0px 1px #ED4B9E, 0px 0px 0px 4px rgba(237, 75, 158, 0.2)",
-    focus: "0px 0px 0px 1px #7645D9, 0px 0px 0px 4px rgba(118, 69, 217, 0.6)",
+    warning: "0px 0px 0px 1px #dc143c, 0px 0px 0px 4px rgba(220,20,60, 0.2)",
+    focus: "0px 0px 0px 1px #deb887, 0px 0px 0px 4px rgba(222,184,135, 0.6)",
     inset: "inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)",
 };
 var spacing = [0, 4, 8, 16, 24, 32, 48, 64];
@@ -2448,7 +2448,7 @@ var LiveValue = "3.00";
 fetch("https://api.dex.guru/v1/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3")
     .then(function (res) { return res.json(); })
     .then(function (result) {
-    var bobaValues = (result.priceUSD * 1000000000).toFixed(2).toString();
+    var bobaValues = (result.priceUSD * 1000000000).toFixed(3).toString();
     BobaValue = bobaValues;
 }, function (error) {
     BobaValue = "0.00";
@@ -2456,10 +2456,10 @@ fetch("https://api.dex.guru/v1/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3
     .catch(function () {
     BobaValue = "3.00";
 });
-fetch("https://api.dex.guru/v1/tokens/x")
+fetch("https://api.dex.guru/v1/tokens/0x45EeDF18492b6eEe6Ba99d578D0De16ca3bD8967")
     .then(function (res) { return res.json(); })
     .then(function (result) {
-    var liveValue = (result.priceUSD).toFixed(2).toString();
+    var liveValue = result.priceUSD.toFixed(2).toString();
     LiveValue = liveValue;
 }, function (error) {
     LiveValue = "3.00";
@@ -2652,7 +2652,7 @@ var WalletCard = function (_a) {
             window.localStorage.setItem(localStorageKey, "1");
             onDismiss();
         }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + title.toLocaleLowerCase() },
-        React__default['default'].createElement(Text, { bold: true, color: "#644f30", mr: "16px", style: { fontFamily: "Lato" } }, title),
+        React__default['default'].createElement(Text, { bold: true, color: "primary", mr: "16px" }, title),
         React__default['default'].createElement(Icon, { width: "32px" })));
 };
 
@@ -2997,8 +2997,8 @@ var light$1 = (_a$2 = {},
     },
     _a$2[DANGER] = {
         background: lightColors.failure,
-        backgroundActive: "#D43285",
-        backgroundHover: "#FF65B8",
+        backgroundActive: "#7f5a1d",
+        backgroundHover: "#936727",
         border: 0,
         borderColorHover: "currentColor",
         boxShadow: "none",

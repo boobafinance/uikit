@@ -46,8 +46,8 @@ export const light: ButtonTheme = {
   },
   [DANGER]: {
     background: lightColors.failure,
-    backgroundActive: "#D43285", // darkten 10%
-    backgroundHover: "#FF65B8", // lighten 10%
+    backgroundActive: "#7f5a1d", // darkten 10%
+    backgroundHover: "#936727", // lighten 10%
     border: 0,
     borderColorHover: "currentColor",
     boxShadow: "none",

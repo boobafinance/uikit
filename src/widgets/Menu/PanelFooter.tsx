@@ -61,7 +61,7 @@ fetch("https://api.dex.guru/v1/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3
   .then((res) => res.json())
   .then(
     (result) => {
-      const bobaValues = (result.priceUSD * 1000000000).toFixed(2).toString();
+      const bobaValues = (result.priceUSD * 1000000000).toFixed(3).toString();
       BobaValue = bobaValues;
     },
     (error) => {
@@ -72,7 +72,7 @@ fetch("https://api.dex.guru/v1/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3
     BobaValue = "3.00";
   });
 
-fetch("https://api.dex.guru/v1/tokens/x")
+fetch("https://api.dex.guru/v1/tokens/0x45EeDF18492b6eEe6Ba99d578D0De16ca3bD8967")
   .then((res) => res.json())
   .then(
     (result) => {

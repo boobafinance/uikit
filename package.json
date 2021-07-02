@@ -13,7 +13,6 @@
   "scripts": {
     "build": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist && cp",
     "buildjeff": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist && cp -R ./dist ../farm-app/node_modules/@pancakeswap-libs/uikit",
-    "buildswap": "rollup -c && tsc -d --emitDeclarationOnly --declarationDir dist && cp -R ./dist ../swap-app/node_modules/@pancakeswap-libs/uikit",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "storybook": "start-storybook -p 6006",
