@@ -55,7 +55,7 @@ const SocialEntry = styled.div`
 `;
 
 let BobaValue = "0.00";
-let LiveValue = "3.00";
+let LiveValue = "0.00";
 
 fetch("https://api.dex.guru/v1/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3")
   .then((res) => res.json())
@@ -69,7 +69,7 @@ fetch("https://api.dex.guru/v1/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3
     }
   )
   .catch(() => {
-    BobaValue = "3.00";
+    BobaValue = "0.00";
   });
 
 fetch("https://api.dex.guru/v1/tokens/0x45EeDF18492b6eEe6Ba99d578D0De16ca3bD8967")
@@ -80,11 +80,11 @@ fetch("https://api.dex.guru/v1/tokens/0x45EeDF18492b6eEe6Ba99d578D0De16ca3bD8967
       LiveValue = liveValue;
     },
     (error) => {
-      LiveValue = "3.00";
+      LiveValue = "0.00";
     }
   )
   .catch(() => {
-    LiveValue = "3.00";
+    LiveValue = "0.00";
   });
 
 const PanelFooter: React.FC<Props> = ({
@@ -123,7 +123,7 @@ const PanelFooter: React.FC<Props> = ({
         )}
 
         {LiveValue ? (
-          <PriceLink href={priceLink} target="_blank">
+          <PriceLink href="https://poocoin.app/tokens/0x45eedf18492b6eee6ba99d578d0de16ca3bd8967" target="_blank">
             <LogoLive width="24px" mr="8px" />
             <Text color="textSubtle" bold>
               {`$${LiveValue}`}

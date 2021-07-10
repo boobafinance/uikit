@@ -2431,7 +2431,7 @@ var PriceLink = styled.a(templateObject_2$c || (templateObject_2$c = __makeTempl
 var SettingsEntry = styled.div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 8px;\n"])), MENU_ENTRY_HEIGHT);
 var SocialEntry = styled.div(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"], ["\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  height: ", "px;\n  padding: 0 16px;\n"])), MENU_ENTRY_HEIGHT);
 var BobaValue = "0.00";
-var LiveValue = "3.00";
+var LiveValue = "0.00";
 fetch("https://api.dex.guru/v1/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3")
     .then(function (res) { return res.json(); })
     .then(function (result) {
@@ -2441,7 +2441,7 @@ fetch("https://api.dex.guru/v1/tokens/0x5481a517028813956005d77bcd0f561c7276b1e3
     BobaValue = "0.00";
 })
     .catch(function () {
-    BobaValue = "3.00";
+    BobaValue = "0.00";
 });
 fetch("https://api.dex.guru/v1/tokens/0x45EeDF18492b6eEe6Ba99d578D0De16ca3bD8967")
     .then(function (res) { return res.json(); })
@@ -2449,10 +2449,10 @@ fetch("https://api.dex.guru/v1/tokens/0x45EeDF18492b6eEe6Ba99d578D0De16ca3bD8967
     var liveValue = result.priceUSD.toFixed(2).toString();
     LiveValue = liveValue;
 }, function (error) {
-    LiveValue = "3.00";
+    LiveValue = "0.00";
 })
     .catch(function () {
-    LiveValue = "3.00";
+    LiveValue = "0.00";
 });
 var PanelFooter = function (_a) {
     var isPushed = _a.isPushed, pushNav = _a.pushNav, toggleTheme = _a.toggleTheme, isDark = _a.isDark; _a.cakePriceUsd; _a.currentLang; _a.langs; _a.setLang; var priceLink = _a.priceLink;
@@ -2467,7 +2467,7 @@ var PanelFooter = function (_a) {
                 React.createElement(Icon$v, { width: "24px", mr: "8px" }),
                 React.createElement(Text, { color: "textSubtle", bold: true },
                     "1B/", "$" + BobaValue))) : (React.createElement(Skeleton, { width: 80, height: 24 })),
-            LiveValue ? (React.createElement(PriceLink, { href: priceLink, target: "_blank" },
+            LiveValue ? (React.createElement(PriceLink, { href: "https://poocoin.app/tokens/0x45eedf18492b6eee6ba99d578d0de16ca3bd8967", target: "_blank" },
                 React.createElement(Icon$I, { width: "24px", mr: "8px" }),
                 React.createElement(Text, { color: "textSubtle", bold: true }, "$" + LiveValue))) : (React.createElement(Skeleton, { width: 80, height: 24 }))),
         React.createElement(SettingsEntry, null,
